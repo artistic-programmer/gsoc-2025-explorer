@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --tt-bg: #ffffff;
+  --tt-border: #e2e8f0;
+  --tt-fg: #0f172a;
+  --grid: #e2e8f0;
+  --accent: #2563eb;
+  --accent-soft: #93b4f5;
+}
+:root.dark {
+  --tt-bg: #0f172a;
+  --tt-border: #334155;
+  --tt-fg: #e2e8f0;
+  --grid: #1e293b;
+  --accent: #60a5fa;
+  --accent-soft: #35609f;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+  font-feature-settings: 'cv11', 'ss01';
+}
+
+@layer components {
+  .card {
+    @apply rounded-lg border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900;
+  }
+  .btn {
+    @apply inline-flex items-center gap-1.5 rounded-md border border-slate-300 bg-white px-2.5 py-1.5 text-xs font-medium text-slate-700 hover:bg-slate-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-1.5 rounded-md bg-blue-600 px-2.5 py-1.5 text-xs font-medium text-white hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500;
+  }
+  .input {
+    @apply w-full rounded-md border border-slate-300 bg-white px-2.5 py-1.5 text-sm placeholder:text-slate-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-blue-500 dark:border-slate-700 dark:bg-slate-900;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full bg-slate-100 px-2 py-0.5 text-xs text-slate-700 dark:bg-slate-800 dark:text-slate-200;
+  }
+  .th {
+    @apply whitespace-nowrap px-3 py-2 text-left text-xs font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400;
+  }
+  .td {
+    @apply px-3 py-2 align-top text-sm;
+  }
+}
+
+.recharts-wrapper {
+  font-size: 12px;
+}
+.recharts-text {
+  fill: currentColor;
+}
